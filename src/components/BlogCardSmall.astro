@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import FormattedDate from './FormattedDate.astro';
+import BlogCardBig from './BlogCardBig.astro';
+
+const { post } = Astro.props;
+---
+
+
+<a href={`/blog/${post.slug}/`}>
+<li style=`background-image: url(${post.data.heroImage})`>
+  <div>
+      <h4 class="title">{post.data.title}</h4>
+      <h6>{post.data.description}</h6>
+      <p class="date">
+        <FormattedDate date={post.data.pubDate} />
+      </p>
+  </div>
+</li>
+</a>
+
+
+
+<style>
+  div{
+    background-color: rgba(var(--black), 0.5);
+    padding-inline: 40px;
+    padding-block: 20px;
+
+  }
+  li {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    padding-block: 40px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: 0.2s ease;
+  }
+  li:hover {
+    box-shadow: var(--box-shadow);
+  }
+</style>
+
+

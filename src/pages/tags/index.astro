@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Tags from '../../components/Tags.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const tags = Array.from(new Set(allPosts.map((post) => post.data.tags).flat()));
+
+---
+
+<BaseLayout title="Tags">
+  <ul>
+    {
+      tags.map((tag) => (
+      <Tags tag={tag} />
+      ))
+      }
+  </ul>
+</BaseLayout>
+
+
+<style>
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 0;
+  }
+</style>

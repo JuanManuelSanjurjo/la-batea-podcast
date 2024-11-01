@@ -1,0 +1,27 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PodcastSmall from '../components/PodcastSmall.astro';
+import Player from '../components/Player.jsx';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const title = Astro.props.title 
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+      <h1>{title}</h1>
+      <slot />
+      <!-- <PodcastSmall transition:persist transition:name="player" />       -->
+      <Player client:load transition:persist />
+		</main>
+		<Footer />
+	</body>
+</html>
