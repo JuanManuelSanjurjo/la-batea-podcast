@@ -1,40 +1,8 @@
 ---
 const { pathname } = Astro.url;
 ---
-{
-  pathname === '/' ? 
-     <iframe transition:persist style="border-radius:12px" src="https://open.spotify.com/embed/show/0kQpgiacriTrYFQO5DASol?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> 
-  :
-   <iframe
-        transition:persist
-        src="https://open.spotify.com/embed/show/0kQpgiacriTrYFQO5DASol?utm_source=generator"
-        frameBorder="0"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy"
-        class="spotify-widget"
-   />
-}
+
+<iframe transition:persist style="border-radius:12px" src="https://open.spotify.com/embed/show/0kQpgiacriTrYFQO5DASol?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> 
 
 
-<!-- <style > -->
-<!--   .spotify { -->
-<!--     postion: sticky; -->
-<!--     top: 0; -->
-<!--     left: 0; -->
-<!--     z-index: 1000; -->
-<!--     width: 100%; -->
-<!--     height: 352px; -->
-<!--   } -->
-<!---->
-<!-- </style> -->
 
-<style>
-  .spotify-widget {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 300px;
-    height: 80px;
-    border-radius: 12px;
-  }
-</style>

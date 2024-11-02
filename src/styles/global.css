@@ -7,10 +7,10 @@
 :root {
   --accent: #01874d;
   --accent-dark: #00593d;
-  --black: 15, 18, 25;
-  --gray: 242, 242, 242;
-  --gray-light: 229, 233, 240;
-  --gray-dark: 242, 242, 242;
+  --black: 26, 26, 26;
+  --gray: 160, 160, 160;
+  --gray-light: 240, 240, 240;
+  --gray-dark: 41, 41, 41;
   --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
     0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
 }
@@ -28,11 +28,13 @@
   font-style: normal;
   font-display: swap;
 }
-html {
+html,
+* {
   scroll-behavior: smooth;
   scrollbar-width: thin; /* Firefox */
   scrollbar-width: none;
 }
+
 html::-webkit-scrollbar {
   width: 0; /* safari*/
 }
@@ -43,10 +45,11 @@ body {
   padding: 0;
   text-align: left;
   background-color: #00593d;
+  color: var(--gray-light);
   background-size: 100% 600px;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  color: rgb(var(--gray-dark));
+  color: rgb(var(--gray-light));
   font-size: 20px;
   line-height: 1.7;
   min-height: 100vh;
@@ -65,11 +68,10 @@ h4,
 h5,
 h6 {
   margin: 0 0 0.5rem 0;
-  color: rgb(var(--gray));
   line-height: 1.2;
 }
 h1 {
-  font-size: 4.052em;
+  font-size: 6em;
 }
 h2 {
   font-size: 2.441em;
@@ -88,18 +90,21 @@ b {
   font-weight: 700;
 }
 a {
-  color: var(--accent);
+  color: var(--gray-light);
   transition: 0.2s ease;
   padding: 0;
 }
 a:hover {
-  color: var(--gray-dark);
+  color: var(--accent);
 }
 p {
   margin-bottom: 1em;
 }
 .prose p {
   margin-bottom: 2em;
+}
+span {
+  color: var(--accent);
 }
 ul {
   list-style-type: none;
@@ -124,6 +129,7 @@ img {
 img:hover {
   opacity: 0.8;
 }
+
 code {
   padding: 2px 5px;
   background-color: rgb(var(--gray-light));

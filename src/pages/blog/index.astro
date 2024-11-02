@@ -3,27 +3,30 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import BlogCardBig from '../../components/BlogCardBig.astro';
-const posts = (await getCollection('blog')).sort(
+import SearchBar from "../../components/SearchBar/SearchBar.jsx"
 
+let posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+// filter posts by searchterm if no query is provided return all posteos
+const { search }  = Astro.params;
+
+if (search) {
+  const filteredPosts = posts.filter((post) => post.data.title.includes(search) || post.data.tags.includes(search));
+  posts = filteredPosts;
+}
 ---
 
 <BaseLayout title="Blog">
-  <section>
+  <section >
+    <SearchBar client:load />
     <h3>Ultimos posteos</h3>
-    <ul>
+    <ul >
       {
         posts.map((post) => (
           <BlogCardBig post={post} />
         ))
         }
     </ul>
-  </section>
 </BaseLayout>
-
-<script>
-
-</script>
-
 

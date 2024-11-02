@@ -25,7 +25,7 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout>
-<h1>Entradas para {tag}</h1>
+<h2>Entradas para: <span>{tag}</span></h1>
   <ul>
     {
       posts.map((post) => (

@@ -1,0 +1,47 @@
+.searchContainer {
+  width: 60%;
+  margin-block: 20px;
+  transition: 0.2s ease;
+}
+.searchContainer:hover {
+  width: 100%;
+}
+.searchContainer:hover input {
+  box-shadow: var(--box-shadow);
+}
+
+form {
+  display: flex;
+  justify-content: left;
+  align-content: center;
+  gap: 10px;
+}
+
+input,
+button[type="submit"] {
+  outline: none;
+  border: none;
+}
+input[type="text"] {
+  width: 100%;
+  color: grey;
+  border-radius: 12px;
+  padding: 10px 20px;
+}
+
+button[type="submit"] {
+  border-radius: 12px;
+  padding: 10px 20px;
+  transition: 0.2s ease;
+}
+button[type="submit"]:hover {
+  background-color: var(--accent);
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .searchContainer {
+    width: 100%;
+  }
+}

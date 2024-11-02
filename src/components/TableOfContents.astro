@@ -13,6 +13,7 @@ const grouppedHeadings = headings.reduce((array, heading) => {
 ---
 
 <nav id="table-of-contents" aria-label="Table Of Contents">
+  {grouppedHeadings.length > 0 && <h5>Tabla de Contenidos</h5>}
   <ol>
     {
       grouppedHeadings.map((h) => (
@@ -72,9 +73,58 @@ const grouppedHeadings = headings.reduce((array, heading) => {
     observer.observe(heading);
   }
 </script>
+<script>
+    // JavaScript para manejar el clic y aplicar la clase activa
+    // document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('astro:page-load', () => {
+        const tocLinks = document.querySelectorAll('#table-of-contents a');
 
+        tocLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                // Elimina la clase 'active-toc-item' de todos los enlaces
+                tocLinks.forEach(link => link.classList.remove('active-toc-item'));
+
+                // Agrega la clase al enlace cliqueado
+                event.currentTarget.classList.add('active-toc-item');
+            });
+        });
+    });
+</script>
 <style>
-.active-toc-item {
-  font-weight: bold;
-}
+    #table-of-contents{
+      position: fixed;
+      top: 90px;
+      left:0px;
+      width: 300px;
+      max-height: 90vh;
+      margin: 10px;
+      font-size: 0.9em;
+      overflow-y: auto;
+      border-radius: 0 8px;
+    }
+    .active-toc-item, a:hover{
+      color: var(--accent)
+    }
+    li::marker{
+      color: rgb(var(--gray));
+    }
+    a{
+      color: rgb(var(--gray-light))
+;
+      text-decoration: none;
+    }
+    h5{
+      position: sticky;
+      top:0;
+      background-color: var(--accent-dark);
+      width:90%;
+      paddin: 10px
+		  /* box-shadow: 0 16px 8px -8px rgba(var(--black), 43%); */
+
+    }
+    @media (max-width: 1300px){
+      #table-of-contents{
+        display:none;
+      }
+    }
 </style>
