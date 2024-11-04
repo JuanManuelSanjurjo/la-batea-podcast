@@ -14,24 +14,25 @@ const grouppedHeadings = headings.reduce((array, heading) => {
 
 <nav id="table-of-contents" aria-label="Table Of Contents">
   {grouppedHeadings.length > 0 && <h5>Tabla de Contenidos</h5>}
-  <ol>
+
+  <ul class="headings">
     {
       grouppedHeadings.map((h) => (
         <li>
           <a href={`#${h.slug}`}>{h.text}</a>
           {h.subheadings.length > 0 && (
-            <ol>
+            <ul class="subheadings">
               {h.subheadings.map((sub) => (
                 <li>
                   <a href={`#${sub.slug}`}>{sub.text}</a>
                 </li>
               ))}
-            </ol>
+            </ul>
           )}
         </li>
       ))
     }
-  </ol>
+  </ul>
 </nav>
 
 <script is:inline>
@@ -92,39 +93,47 @@ const grouppedHeadings = headings.reduce((array, heading) => {
 </script>
 <style>
     #table-of-contents{
+      background-color: var(--accent-darker);
       position: fixed;
       top: 90px;
-      left:0px;
+      left:10px;
       width: 300px;
       max-height: 90vh;
-      margin: 10px;
-      font-size: 0.9em;
+      padding: 0 20px;
+      font-size: 0.8em;
       overflow-y: auto;
-      border-radius: 0 8px;
+      border-radius: 12px;
+      letter-spacing: 0.5px;
+    }
+    .headings {
+      /* font-weight: bold; */
+    }
+    .subheadings {
+      padding-left: 1em;
+      font-weight: 200 ;
+      border-left: 2px solid var(--accent);
     }
     .active-toc-item, a:hover{
       color: var(--accent)
     }
-    li::marker{
-      color: rgb(var(--gray));
-    }
     a{
-      color: rgb(var(--gray-light))
-;
+      color: rgb(var(--gray-light));
       text-decoration: none;
     }
     h5{
       position: sticky;
       top:0;
-      background-color: var(--accent-dark);
-      width:90%;
-      paddin: 10px
-		  /* box-shadow: 0 16px 8px -8px rgba(var(--black), 43%); */
-
+      background-color: var(--accent-darker);
+      width: 90%;
+      padding: 10px;
+      border-bottom: 2px solid var(--accent);
     }
-    @media (max-width: 1300px){
+    @media (max-width: 1450px){
       #table-of-contents{
-        display:none;
+        /* display:none; */
+        position: static;
+        max-height: max-content;
+        width: inherit;
       }
     }
 </style>

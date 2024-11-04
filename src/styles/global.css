@@ -7,6 +7,7 @@
 :root {
   --accent: #01874d;
   --accent-dark: #00593d;
+  --accent-darker: #014a33;
   --black: 26, 26, 26;
   --gray: 160, 160, 160;
   --gray-light: 240, 240, 240;
@@ -28,13 +29,16 @@
   font-style: normal;
   font-display: swap;
 }
+
 html,
 * {
   scroll-behavior: smooth;
   scrollbar-width: thin; /* Firefox */
   scrollbar-width: none;
 }
-
+::selection {
+  background-color: var(--accent);
+}
 html::-webkit-scrollbar {
   width: 0; /* safari*/
 }
@@ -71,7 +75,8 @@ h6 {
   line-height: 1.2;
 }
 h1 {
-  font-size: 6em;
+  font-size: 4.5em;
+  text-decoration: underline var(--accent);
 }
 h2 {
   font-size: 2.441em;
@@ -109,6 +114,13 @@ span {
 ul {
   list-style-type: none;
   padding: 0;
+  margin-block: 2px;
+}
+.taglist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-top: 1em;
 }
 textarea {
   width: 100%;
@@ -155,6 +167,9 @@ hr {
 @media (max-width: 720px) {
   body {
     font-size: 18px;
+  }
+  h1 {
+    font-size: 3em;
   }
   main {
     padding: 1em;

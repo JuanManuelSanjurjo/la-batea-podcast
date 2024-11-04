@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
+import ReadMore from '../../components/ReadMore.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -17,6 +18,8 @@ const { Content, headings } = await post.render();
 ---
 
 <BlogPost {...post.data}>
-  <TableOfContents headings={headings} />
+  {headings.length > 1 && <TableOfContents headings={headings} />}
 	<Content />
+  <hr/>
+  <ReadMore />
 </BlogPost>

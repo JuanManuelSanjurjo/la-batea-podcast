@@ -12,7 +12,7 @@ const tags = Array.from(new Set(allPosts.map((post) => post.data.tags).flat()));
   <ul>
     {
       tags.map((tag) => (
-      <Tags tag={tag} />
+    <Tags pad="1em" tag={tag} />
       ))
       }
   </ul>

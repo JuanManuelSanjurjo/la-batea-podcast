@@ -29,15 +29,6 @@ const { posts } = Astro.props;
   <ul>
     {
       posts.map((post) => (
-        <li>
-          <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-        </li>
-      ))
-      }
-  </ul>
-  <ul>
-    {
-      posts.map((post) => (
         <BlogCardSmall post={post} />
       ))
     }

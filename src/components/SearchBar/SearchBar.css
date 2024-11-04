@@ -1,7 +1,7 @@
 .searchContainer {
   width: 60%;
   margin-block: 20px;
-  transition: 0.2s ease;
+  transition: 0.6s ease;
 }
 .searchContainer:hover {
   width: 100%;

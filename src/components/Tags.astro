@@ -1,5 +1,5 @@
 ---
-const { tag } = Astro.props;
+const { tag, pad } = Astro.props;
 ---
 
 <li>
@@ -8,12 +8,11 @@ const { tag } = Astro.props;
 
 
 
-<style>
-
+<style define:vars={{pad}}>
   li {
     display: inline-block;
     background-color: var(--accent);
-    padding:1em;
+    padding: var(--pad);
     border-radius: 0.4em;
     transition: 0.2s ease;
   }
@@ -21,10 +20,10 @@ const { tag } = Astro.props;
     box-shadow: var(--box-shadow);
   }
   a {
-    color: var(--accent-dark);
+    color: var(--accent-darker);
     text-decoration: none;
   }
   li:hover a{
-    color: var(--gray-dark);
+    color: var(--gray-light);
   }
 </style>

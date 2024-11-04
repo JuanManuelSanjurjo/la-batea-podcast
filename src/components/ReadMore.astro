@@ -1,0 +1,56 @@
+---
+import PostCards from './PostCards.astro';
+import { getCollection } from 'astro:content';
+
+
+let posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+).slice(0, 3);
+
+---
+
+<div id="keep-reading">
+    <ul>
+      {
+      posts.map((post) => (
+      <PostCards post={post} />
+      ))
+      }
+    </ul>
+</div>
+
+
+
+<style>
+    #keep-reading{
+      position: fixed;
+      top: 120px;
+      right:10px;
+      width: 300px;
+      max-height: 80vh;
+      padding-inline: 2px;
+      font-size: 0.8em;
+      overflow-y: auto;
+      border-radius: 12px;
+      letter-spacing: 0.5px;
+    }
+    ul{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    h5{
+      top: 50px;
+      width: 90%;
+      text-align: center;
+      padding-top: 10px;
+    }
+    @media (max-width: 1450px){
+      #keep-reading{
+        /* display:none; */
+        position: static;
+        max-height: max-content;
+        width: inherit;
+      }
+    }
+</style>
