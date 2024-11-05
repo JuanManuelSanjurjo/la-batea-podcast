@@ -1,13 +1,11 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
-import PodcastSmall from '../components/PodcastSmall.astro'
 import Player from '../components/Player.jsx'
 ---
 
 <Layout 
 	description="Lorem ipsum dolor sit amet"
   heroImage="/La Batea_flotante blanco.png"
-
 >
   <!-- <PodcastSmall /> -->
   <Player client:load transition:persist="player" transition:persist-props />

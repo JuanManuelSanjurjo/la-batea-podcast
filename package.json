@@ -5,12 +5,13 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && pagefind --site dist && cp -r dist/pagefind public",
-    "build-blog": "astro build && pagefind --site dist && cp -r dist/pagefind public",
+    "build": "astro build",
+    "builder": "astro build && pagefind --site dist && cp -r dist/pagefind public",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.4",
     "@astrojs/mdx": "^3.1.8",
     "@astrojs/react": "^3.6.2",
     "@astrojs/rss": "^4.0.9",
@@ -19,7 +20,8 @@
     "@types/react-dom": "^18.3.1",
     "astro": "^4.16.7",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "typescript": "^5.6.3"
   },
   "devDependencies": {
     "pagefind": "^1.1.1"
