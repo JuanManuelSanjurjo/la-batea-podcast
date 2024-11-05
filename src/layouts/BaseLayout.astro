@@ -26,7 +26,7 @@ const title = Astro.props.title
 
 
 <style>
-@supports (background-clip: text) {
+@supports (background-clip: text) and (background: linear-gradient(to bottom, white, 70%, var(--accent))) {
   h1 {
     background: linear-gradient(to bottom , white, 70%, var(--accent) );
     background-clip: text;
