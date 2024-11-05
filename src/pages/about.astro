@@ -1,14 +1,13 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BlogPost from '../layouts/BlogPost.astro';
 import Player from '../components/Player.jsx'
 ---
 
-<Layout 
+<BlogPost
 	description="Lorem ipsum dolor sit amet"
   heroImage="/La Batea_flotante blanco.png"
 >
-  <!-- <PodcastSmall /> -->
-  <Player client:load transition:persist="player" transition:persist-props />
+  <Player />
   <h2>Sobre Nosotros</h2>
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -61,4 +60,4 @@ import Player from '../components/Player.jsx'
 		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
 		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
 	</p>
-</Layout>
+</BlogPost>

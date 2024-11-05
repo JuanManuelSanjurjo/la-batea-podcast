@@ -7,6 +7,6 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://labateapodcast.netlify.app",
   integrations: [mdx(), sitemap(), react()],
 });
-
