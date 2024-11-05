@@ -17,9 +17,9 @@ const post = Astro.props;
 const { Content, headings } = await post.render();
 ---
 
-<BlogPost {...post.data}>
+<BlogPost {...post.data} >
   {headings.length > 1 && <TableOfContents headings={headings} />}
-	<Content />
+	<Content  />
   <hr/>
   <ReadMore />
 </BlogPost>

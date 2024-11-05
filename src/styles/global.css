@@ -15,6 +15,24 @@
   --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
     0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
 }
+#search {
+  /* pagefind styles */
+  margin-block: 20px;
+  --pagefind-ui-scale: 1;
+  --pagefind-ui-primary: #01874d;
+  --pagefind-ui-text: rgb(var(--gray-light));
+  --pagefind-ui-background: var(--accent-darker);
+  --pagefind-ui-border: var(--accent);
+  --pagefind-ui-tag: green;
+  --pagefind-ui-border-width: 2px;
+  --pagefind-ui-border-radius: 8px;
+  --pagefind-ui-image-border-radius: 8px;
+  --pagefind-ui-image-box-ratio: 3 / 2;
+  --pagefind-ui-font: "Atkinson";
+}
+.pagefind-ui__drawer * {
+  color: rgb(var(--gray-light));
+}
 @font-face {
   font-family: "Atkinson";
   src: url("/fonts/atkinson-regular.woff") format("woff");

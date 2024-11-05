@@ -5,17 +5,17 @@ import FormattedDate from '../components/FormattedDate.astro';
 import Tags from '../components/Tags.astro';
 import TopBtn from '../components/TopBtn.astro';
 import "../styles/global.css";
-const { title, author, description, pubDate, updatedDate, heroImage, tags } = Astro.props;
+const { title, author, description, pubDate, updatedDate, heroImage, tags, slug } = Astro.props;
 ---
 
 <BaseLayout>
-			<article id="top">
+			<article id="top" data-pagefind-body >
 				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+      {heroImage && <img  transition:name={`${title}-image`} width={1021} height={510} src={heroImage} alt=""   />}
 				</div>
 				<div class="prose">
 					<div class="title">
-						<div class="date">
+						<div class="date">  
             { pubDate && (
 							<FormattedDate date={pubDate} />
             )}
@@ -27,9 +27,9 @@ const { title, author, description, pubDate, updatedDate, heroImage, tags } = As
 								)
 							}
 						</div>
-						<h1>{title}</h1>
+        <h1 data-agefind-weight="7" transition:name={`${title}-title`}>{title}</h1>
             { author && (
-        <p style={{margin: 0}}>Por {author}</p>
+        <p data-pagefind-weight="6" style={{margin: 0}}>Por {author}</p>
             )}
 						<hr />
             { tags?.length > 0 && (
@@ -44,6 +44,6 @@ const { title, author, description, pubDate, updatedDate, heroImage, tags } = As
 					<slot />
 				</div>
 			</article>
-      <TopBtn />
+  <TopBtn /> 
 </BaseLayout>
 

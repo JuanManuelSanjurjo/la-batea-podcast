@@ -9,8 +9,8 @@ const { post } = Astro.props;
 
 <li client:visible>
   <a href={`/blog/${post.slug}/`}>
-    <Image class="hero-image" width={720} height={360} src={post.data.heroImage} alt="" />
-    <h4 class="title">{post.data.title}</h4>
+    <Image transition:name={`${post.data.title}-image`}  src={post.data.heroImage} alt={post.data.title} width={720} height={360}>
+    <h4 class="title" transition:name={`${post.data.title}-title`} >{post.data.title}</h4>
     <p class="date">
     <FormattedDate date={post.data.pubDate} />
     </p>

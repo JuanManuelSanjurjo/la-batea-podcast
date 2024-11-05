@@ -19,7 +19,8 @@ if (search) {
 
 <BaseLayout title="Blog">
   <section >
-    <SearchBar client:load />
+    <!-- <SearchBar client:load /> -->
+  <div id="search"></div>
     <h3>Ultimos posteos</h3>
     <ul >
       {
@@ -28,5 +29,24 @@ if (search) {
         ))
         }
     </ul>
+
 </BaseLayout>
 
+<script>
+function initPagefind() {
+  if (!document.querySelector("#search")) {
+    return;
+  }
+  new PagefindUI({
+    element: "#search",
+    showSubResults: true,
+    resetStyles: true,
+    showEmptyFilters: true
+  });
+}
+
+// Listen for Astro view transition events
+document.addEventListener('astro:afterload', initPagefind); // Astro-specific event
+window.addEventListener('DOMContentLoaded', initPagefind); // Initial load
+
+</script>

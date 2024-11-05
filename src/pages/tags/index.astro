@@ -9,7 +9,7 @@ const tags = Array.from(new Set(allPosts.map((post) => post.data.tags).flat()));
 ---
 
 <BaseLayout title="Tags">
-  <ul>
+  <ul  >
     {
       tags.map((tag) => (
     <Tags pad="1em" tag={tag} />

@@ -6,10 +6,10 @@ import { getCollection } from 'astro:content';
 let posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 ).slice(0, 3);
-
 ---
 
 <div id="keep-reading">
+    <h5>Leer más</h5>
     <ul>
       {
       posts.map((post) => (
@@ -23,15 +23,7 @@ let posts = (await getCollection('blog')).sort(
 
 <style>
     #keep-reading{
-      position: fixed;
-      top: 120px;
-      right:10px;
-      width: 300px;
-      max-height: 80vh;
-      padding-inline: 2px;
-      font-size: 0.8em;
-      overflow-y: auto;
-      border-radius: 12px;
+      width: 100%;
       letter-spacing: 0.5px;
     }
     ul{
@@ -40,10 +32,7 @@ let posts = (await getCollection('blog')).sort(
       gap: 20px;
     }
     h5{
-      top: 50px;
-      width: 90%;
-      text-align: center;
-      padding-top: 10px;
+      padding-block: 30px;
     }
     @media (max-width: 1450px){
       #keep-reading{

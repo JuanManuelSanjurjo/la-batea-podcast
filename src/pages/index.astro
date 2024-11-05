@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PodcastSmall from "../components/PodcastSmall.astro"
+import Player from "../components/Player.jsx"
 ---
 <BaseLayout title="Podcast">
-  <PodcastSmall transition:persist-props />
+  <!-- <PodcastSmall  /> -->
+  <Player client:load transition:persist="player" transition:persist-props  />
 </BaseLayout>
