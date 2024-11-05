@@ -11,7 +11,7 @@ const { title, author, description, pubDate, updatedDate, heroImage, tags, slug 
 <BaseLayout>
 			<article id="top" data-pagefind-body >
 				<div class="hero-image">
-      {heroImage && <img  transition:name={`${title}-image`} width={1021} height={510} src={heroImage} alt=""   />}
+      {heroImage && <img width={1021} height={510} src={heroImage} alt=""   />}
 				</div>
 				<div class="prose">
 					<div class="title">
@@ -27,7 +27,7 @@ const { title, author, description, pubDate, updatedDate, heroImage, tags, slug 
 								)
 							}
 						</div>
-        <h1 data-agefind-weight="7" transition:name={`${title}-title`}>{title}</h1>
+        <h1 data-agefind-weight="7" >{title}</h1>
             { author && (
         <p data-pagefind-weight="6" style={{margin: 0}}>Por {author}</p>
             )}

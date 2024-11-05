@@ -19,18 +19,31 @@ if (search) {
 
 <BaseLayout title="Blog">
   <section >
-    <!-- <SearchBar client:load /> -->
   <div id="search"></div>
     <h3>Ultimos posteos</h3>
     <ul >
       {
         posts.map((post) => (
-          <BlogCardBig post={post} />
+          <BlogCardBig client:visible post={post} />
         ))
         }
     </ul>
-
 </BaseLayout>
+
+<style>
+  section {
+    animation: fadeIn 1s;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
 
 <script>
 function initPagefind() {
