@@ -29,9 +29,3 @@ identity:
 theme:
   color: "#00593d" # Primary color
   accent_color: "#01874d" # Accent color
-  navbar:
-    background_color: "#00593d" # Dark color for the navbar
-    text_color: "#ffffff" # White text for the navbar
-  sidebar:
-    background_color: "#00593d" # White background for the sidebar
-    text_color: "#ffffff" # Dark text for the sidebar
