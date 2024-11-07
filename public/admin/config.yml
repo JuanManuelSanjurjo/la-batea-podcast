@@ -18,6 +18,13 @@ collections:
       - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
 
+identity:
+  # Enable the identity widget on the admin dashboard
+  enabled: true
+  # Set the identity cookie name
+  cookie_name: netlify-identity
+  logouts_redirect: "/"
+
 # Customizing the appearance
 theme:
   color: "#00593d" # Primary color
