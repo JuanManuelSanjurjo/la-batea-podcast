@@ -11,7 +11,12 @@ const title = Astro.props.title
 
 <!doctype html>
 <html lang="en">
-	<head>
+  <head>
+    <!-- Netlify Identity Widget -->
+      <script
+      type="text/javascript"
+      src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+    ></script>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
