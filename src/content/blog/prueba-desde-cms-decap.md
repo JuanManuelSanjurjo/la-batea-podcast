@@ -1,7 +1,7 @@
 ---
 title: Prueba desde CMS decap
 description: "prueba "
-pubDate: 2024-11-08T20:06:00.000Z
+pubDate: 2024-11-07T20:58:00.000Z
 heroImage: /images/fotochica.jpg
 tags:
   - prueba
